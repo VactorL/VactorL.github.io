@@ -24,6 +24,10 @@ a:hover{
     border-right: solid 1px #A9A9A9;
 }
 
+.barL-nav li ul{
+    display: none;
+}
+
 .barL-title{
     font-size: 18px;
     line-height: 40px;
@@ -41,8 +45,3 @@ a:hover{
 .barL-subT li a:hover{
     color: #C0C0C0;
 }
-
-.barL-nav li ul{
-    display: none;
-}
-
