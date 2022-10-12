@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    #box1{
+      width: 100px;
+      height: 100px;
+      background-color: forestgreen;
+      position: absolute;
+      left: 0;
+    }
+    #box2{
+       width: 100px;
+       height: 100px;
+       background-color: aqua;
+       position: absolute;
+       left: 0;
+      top: 200px;
+     }
+
+  </style>
+
+  <script src="js/tool.js"></script>
+  <script>
+
+    window.onload = function () {
+
+      var box1 = document.getElementById("box1");
+      var box2 = document.getElementById("box2");
+      var btn1 = document.getElementById("btn1");
+      var btn2 = document.getElementById("btn2");
+      var btn3 = document.getElementById("btn3");
+      var btn4 = document.getElementById("btn4");
+      var btn5 = document.getElementById("btn5");
+
+      btn1.onclick = function () {
+
+        move(box1 , "left" , 800 , 15);
+
+      };
+
+      btn2.onclick = function () {
+
+        move(box1 , "left" , 0 , 15);
+
+      };
+
+      btn3.onclick = function () {
+
+        move(box2 , "left" , 800 , 21);
+
+      }
+
+      btn4.onclick = function () {
+
+        move(box2 , "left" , 0 , 18);
+
+      }
+
+      btn5.onclick = function () {
+
+        move(box2 , "width" , 400 , 10 , function(){
+          move(box2 , "height" , 400 , 10 , function(){
+            move(box2 , "top" , 400 , 10 , function(){
+              move(box2 , "height" , 100 , 10 , function(){
+                move(box2 , "width" , 100 , 10 , function(){
+                  move(box2 , "top" , 200 , 10 , function(){});
+                });
+              });
+            });
+          });
+        });
+
+      }
+
+    };
+
+
+  </script>
+</head>
+<body>
+<div>
+  <button id="btn2">box1MoveLeft</button>
+  <button id="btn1">box1MoveRight</button>
+  <button id="btn4">box2MoveLeft</button>
+  <button id="btn3">box2MoveRight</button>
+</div>
+<div>
+  <button id="btn5">box2Width+</button>
+</div>
+<br><br>
+<div id="box1"></div>
+<div id="box2"></div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!--可将JS代码写到外部JS文件中，然后通过script标签引入
+        写在外部文件中可在不同页面同时引入，也可利用浏览器缓存机制
+        推荐使用的方式
+    -->
+    <!--script标签引入外部文件后，不能编写代码，即使编写后也会被浏览器忽略
+        如果需要，新建script标签后再编写
+    -->
+    <script src="../JS/script.js"></script>
+
+    <!--可以将script代码写在标签中
+    -->
+    <script>
+
+      alert("JS in tag script");
+
+    </script>
+</head>
+<body>
+  <!--  可将JS代码写在标签的 onclick 属性中
+        点击按钮时，JS代码才会执行
+
+        虽然可以写在标签属性中，但属于结构性为耦合，不方便维护
+  -->
+  <button onclick="alert('Do not press!');">Press it!</button>
+
+  <!--
+        可将JS代码写在超链接href属性里，点击时执行JS代码
+  -->
+  <a href="javascript:alert('')"></a>
+</body>
+</html>

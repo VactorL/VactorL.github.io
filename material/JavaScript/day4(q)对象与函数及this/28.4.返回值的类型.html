@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        function func1(){
+
+            console.log("Function Start!");
+
+            for( i=0 ; i<5 ; i++){
+
+                if(i == 2){
+                    //使用break退出当前循环
+                    //break;
+
+                    //使用continue跳过当次循环
+                    //continue;
+
+                    //※使用return结束整个函数
+                    return;
+                }
+
+                console.log(i);
+
+            }
+
+            console.log("Function End!");
+
+        }
+
+        func1();
+
+        /*
+        *返回值可以使任意的数据类型
+        *   也可以是一个对象，也可以是一个函数
+        * */
+
+        function func2(){
+
+            var obj = {name:"悟净"};
+
+            return obj;
+        }
+
+        var a = func2();
+
+        console.log('a = ' + a.name);
+
+        function func3(){
+
+            function func4(){
+
+                console.log("I'm func4!");
+                return true;
+            }
+            //将func4()作为返回值返回
+            return func4();
+
+        }
+
+        a = func3();
+        console.log(a);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

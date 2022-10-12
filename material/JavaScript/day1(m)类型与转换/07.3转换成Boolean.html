@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+      /*
+      * 将其他的数据类型转换为Boolean
+      *   - 使用Boolean()函数
+      *     - 数字 --> 布尔
+      *       - 除了0和NaN，其余的都是true
+      *
+      *     - 字符串 --> 布尔
+      *       - 除了空串，其余都是true
+      *
+      *     - null和undefined都是false
+      *
+      *     - 对象也换转换为true
+      * */
+
+      var a = NaN;
+
+      a = "String";
+
+      a = Boolean(a);
+
+      console.log(a);
+      console.log(typeof a);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

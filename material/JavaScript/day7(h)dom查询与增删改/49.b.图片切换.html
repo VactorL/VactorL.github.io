@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        #outer{
+            width: 610px;
+            height: 350px;
+            margin: auto;
+            text-align: center;
+        }
+
+    </style>
+    <script>
+
+      window.onload = function () {
+
+          /*
+          * 点击按钮切换图片
+          * */
+          var prev = document.getElementById("prev");
+          var next = document.getElementById("next");
+
+          var img = document.getElementsByTagName("img")[0];
+
+          //创建一个数组用于保存img
+          var imgArr = ["img/1.jpg" , "img/2.jpg" , "img/3.jpg" , "img/4.jpg" , "img/5.jpg"]
+
+          var index = 0;
+
+          //获取id为info的p元素
+          var info = document.getElementById("info");
+          //设置提示文字
+          info.innerHTML = "共 5 页，第 " + (index+1) +" 张";
+
+          prev.onclick = function () {
+
+              index--;
+              if(index < 0){
+                  index = imgArr.length - 1;
+              }
+              img.src = imgArr[index];
+              info.innerHTML = "共 5 页，第 " + (index+1) +" 张";
+          }
+
+          next.onclick = function () {
+
+              index++;
+              if(index > imgArr.length - 1){
+                  index = 0;
+              }
+              img.src = imgArr[index];
+              info.innerHTML = "共 5 页，第 " + (index+1) +" 张";
+          }
+
+      }
+
+    </script>
+</head>
+<body>
+    <div id="outer">
+
+        <p id="info"></p>
+        <img src="img/1.jpg" width= 600px height=345px alt="Photo1">
+        <button id="prev">Prev</button>
+        <button id="next">Next</button>
+    </div>
+
+
+</body>
+</html>

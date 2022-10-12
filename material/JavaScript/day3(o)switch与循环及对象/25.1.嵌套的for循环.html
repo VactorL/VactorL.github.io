@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+      /*
+      *
+      *
+      * */
+
+      for(var i = 0 ; i < 10 ; i++){      //循环10次，i = 9
+
+        /*
+        * 在循环的内部在创建一个循环，用来控制图形的宽度
+        * */
+        for(var j = 0; j < i ; j++){     //因为i = 9，所以循环9次
+
+          document.write("*&nbsp&nbsp&nbsp&nbsp");
+
+        }
+
+        document.write("<br />");
+
+      }
+
+      for(var i = 10 ; i > 0 ; i--){      //循环10次，i = 0
+
+        /*
+        * 在循环的内部在创建一个循环，用来控制图形的宽度
+        * */
+        for(var j = 0; j < i ; j++){     //因为i = 10，所以循环10次
+
+          document.write("*&nbsp&nbsp&nbsp&nbsp");
+
+        }
+
+        document.write("<br />");
+
+      }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

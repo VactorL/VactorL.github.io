@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+
+            #box1{
+                width: 150px;
+                height: 150px;
+                padding: 15px;
+                border: aqua solid 15px;
+                background-color: aquamarine;
+                margin: auto;
+            }
+            #box3{
+                position: relative;
+                width: 800px;
+                height: 600px;
+            }
+            #box4{
+                width: 200px;
+                height: 150px;
+                background-color: #238419;
+                overflow: hidden;
+            }
+            #box5{
+                width: 150px;
+                height: 400px;
+                background-color: #bbffaa;
+            }
+
+        </style>
+        <script>
+
+            window.onload = function(){
+                var box1 = document.getElementById("box1");
+                var btn1 = document.getElementById("btn1");
+                var box4 = document.getElementById("box4");
+                var box5 = document.getElementById("box5");
+
+                btn1.onclick = function(){
+                    /*
+                    * clientWidth   clientHeight (只读属性)
+                    *   - 获取元素的可见宽度和高度：包括 内容区 和 内边距
+                    *   - 这些属性都是不带px的，返回的都是一个数字，可以直接进行计算
+                    * */
+                    //alert(box1.clientWidth);
+
+                    /*
+                    * offsetWidth   offsetHeight (只读属性)
+                    *   - 获取元素的整体大小：包括 内容区、内边距 和 边框
+                    * */
+
+                    /*
+                    * offsetParent               (只读属性)
+                    *   - 获取当前元素的定位父元素
+                    *   - 会获取到当前元素最近的开启了定位的祖先元素
+                    *       若所有祖先元素都没有开启定位，则返回body
+                    * */
+                    //var op = box1.offsetParent;
+                    //alert(op);
+
+                    /*
+                    * offsetLeft                 (只读属性)
+                    *   - 当前元素相对于其定位父元素的水平偏移量
+                    * offsetRight
+                    *   - 当前元素相对于其定位父元素的垂直偏移量
+                    * */
+                    //alert(box1.offsetLeft);
+
+                    /*
+                    * scrollWidth   scrollHeight (只读属性)
+                    *   - 获取元素整个滚动区域的宽高
+                    * */
+                    //console.log(box4.clientHeight);
+                    //console.log(box4.scrollHeight);
+
+                    /*
+                    * scrollLeft    scrollTop  (只读属性)
+                    *   - 获取滚动条滚动距离
+                    * */
+
+                    /*
+                    *   当满足scrollHeight - scrollTop == clientHeight
+                    * 说明垂直滚动条到-尽头-了
+                    *
+                    *   当满足scrollWidth - scrollLeft == clientWidth
+                    * 说明水平滚动条到-尽头-了
+                    * */
+                };
+            };
+
+        </script>
+    </head>
+    <body>
+        <button id="btn1">Press</button>
+        <button id="btn2">Press</button>
+        <br /><br />
+        <div id="box4">
+            <div id="box5">
+                
+            </div>
+        </div>
+        <br /><br />
+        <div id="box3">
+            <div id="box2">
+                <div id="box1"></div>
+            </div>
+        </div>
+    </body>
+</html>

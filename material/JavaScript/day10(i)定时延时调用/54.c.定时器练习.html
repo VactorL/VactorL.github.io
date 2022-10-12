@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+      #box1{
+        width: 100px;
+        height: 100px;
+        background-color: forestgreen;
+        position: absolute;
+        left: 0;
+      }
+      #line1{
+        width: 0;
+        height: 1000px;
+        top: 0;
+        left: 800px;
+        border: #000000 solid 1px;
+        position: absolute;
+      }
+
+    </style>
+    <script>
+
+      function getStyle(obj , name){
+
+        if(window.getComputedStyle){
+          //正常浏览器
+          return getComputedStyle(obj,null)[name];
+        }else{
+          //IE8
+          return obj.currentStyle[name];
+        }
+
+      }
+
+      window.onload = function () {
+
+        var timer;
+
+        var box1 = document.getElementById("box1");
+        var btn1 = document.getElementById("btn1");
+        btn1.onclick = function () {
+
+          clearInterval(timer);
+
+          //开启定时器，用于执行动画效果
+          timer = setInterval(function () {
+
+            //获取box1原来的left值
+            var oldV = parseInt(getStyle(box1,"left"));
+
+            //设置移动速度
+            var newV = oldV + 19;
+
+            if(newV > 800){
+              newV = 800;
+            }
+
+            //将新值赋给box1
+            box1.style.left = newV + 'px';
+
+          },30);
+
+        };
+
+      };
+
+    </script>
+  </head>
+  <body>
+    <button id="btn1">MoveRight</button>
+    <div id="box1"></div>
+    <div id="line1"></div>
+  </body>
+</html>

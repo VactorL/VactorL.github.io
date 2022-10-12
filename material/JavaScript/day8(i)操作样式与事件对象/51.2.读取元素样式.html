@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+      #box1{
+        width: 100px;
+        height: 80px;
+        background-color: aquamarine;
+      }
+
+    </style>
+
+    <script>
+
+      window.onload = function(){
+
+        var box1 = document.getElementById("box1");
+        var btn1 = document.getElementById("btn1");
+        btn1.onclick = function () {
+          /*
+          * 获取box1当前样式
+          *
+          * for IE浏览器(仅)
+          *   语法：元素.currentStyle.样式名
+          *
+          * for 其他浏览器(不支持ie8及以下)
+          *   getComputedStyle()方法
+          *
+          * ※※※※※※※※※※※※※※※※※两种方法都是只读的，如需修改只能用style
+          *
+          *   该方法为window的方法，可以直接使用
+          * 需要两个参数
+          *   Fir.目标元素
+          *   Sec.可以传递一个伪元素，一般不用，传null
+          *
+          * 该方法会返回一个对象，对象中封装当前元素对应的样式
+          *   通过对象.样式名读取
+          *   如果获取的样式没有设置，则会获取到真实值而不是默认
+          * */
+          var obj = getComputedStyle(box1,null);
+          console.log(obj.backgroundColor);
+        };
+
+        /*
+      * 定义一个函数，用来获取指定元素的当前样式
+      * 参数：
+      *   obj 要获取样式的元素
+      *   name 要获取的样式名
+      * */
+        var btn2 = document.getElementById("btn2");
+        btn2.onclick = function(){
+          alert(getStyle(box1,"width"));
+        }
+
+      };
+
+      function getStyle(obj , name){
+
+        if(window.getComputedStyle){
+          //正常浏览器
+          return getComputedStyle(obj,null)[name];
+        }else{
+          //IE8
+          return obj.currentStyle[name];
+        }
+
+        if(obj.currentStyle){
+          //IE8
+          return obj.currentStyle[name];
+        }else{
+          //正常浏览器
+          return getComputedStyle(obj,null)[name];
+        }
+
+        return window.getComputedStyle ? getComputedStyle(obj,null)[name] : obj.currentStyle[name];
+
+      }
+
+
+
+    </script>
+  </head>
+  <body>
+    <button id="btn1">Press</button>
+    <button id="btn2">Press</button>
+    <br /><br />
+    <div id="box1"></div>
+  </body>
+</html>

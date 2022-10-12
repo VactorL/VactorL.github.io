@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+      /*
+      * break关键字可以用退出switch和loop语句(不能用于if)
+      *
+      *   break：只会对离他最近的loop或switch起作用
+      * */
+
+      /*
+      * 不过，可以给loop语句创建一个label，来标识当前的循环
+      * label：循环语句
+      * 使用break语句时，可以仔break后跟着一个label，
+      * 这样break将会结束指定的循环，而不是最近的
+      *
+      * */
+
+      outer: for (var i = 0; i < 3; i++){
+
+        console.log("Outside loop1");
+
+        for(var j = 0 ; j < i ; j++){
+
+          console.log("Inside loop1");
+          break outer;
+          console.log("Inside loop2");
+
+        }
+
+      }
+
+      /*
+      * continue关键字可以用来跳过当次循环
+      *   也默认对距离最近的循环起作用
+      *
+      * 区别：
+      *   - break跳过整个循环
+      *   - continue跳过当次循环
+      * */
+
+      outer2: for (var i = 1; i < 5; i++){
+
+          console.log("i = " + i);
+
+          for(var j = 0 ; j <= i ; j++){
+
+              if(j == 2){
+                  continue outer2;
+              }
+
+              console.log("j = " + j);
+
+          }
+
+      }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

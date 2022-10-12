@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+      function Person(name,age){
+
+        this.name = name;
+        this.age = age;
+
+      }
+
+      var per1 = new Person('name1',19);
+      var per2 = new Person('name2',9);
+      var per3 = new Person('name3',23);
+      var per4 = new Person('name4',18);
+      var per5 = new Person('name5',13);
+
+      var perArr = [per1,per2,per3,per4,per5];
+
+      /*
+      * 创建一个函数，可以将perArr中的满18岁的Person提取出来，
+      *   然后封装到一个新的数组中并返回
+      * arr
+      *   形参，要提取信息的数组
+      * */
+      function getAdult(){
+
+        var newArr = [];
+
+        //遍历perArr，获取perArr中Person对象
+
+        //判断Person对象的age是否大于等于18
+
+        //如果大于等于18，则将这个对象添加到newArr中
+
+        for(let i = 0 ; i < perArr.length ; i++){
+
+            if(perArr[i].age >= 18 ){
+
+                newArr.push(perArr[i]);
+
+            }
+        }
+
+        return newArr;
+
+      }
+
+      var adult = getAdult();
+      console.log(adult);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

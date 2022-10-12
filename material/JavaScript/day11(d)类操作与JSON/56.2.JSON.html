@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+      /*
+      * 如果需要兼容IE7及以下的JSON操作，则通过引入外部js文件来处理
+      * */
+
+      var str = '{"name": "Victor" , "age": 99 , "gender": "male"}';
+
+      /*
+      * eval()
+      *   - 可以用来执行一段字符串形式的JS代码，并将执行结果返回
+      *   - 如果使用eval()执行的字符串中含有{}，它会将{}当成是代码块
+      *       若不希望被当做代码块，则添加括号
+      *
+      *   - eval()函数功能很强大，可直接执行一个字符串代码，
+      *       但在开发中尽量不要使用
+      *           1.执行性能比较差
+      *           2.具有安全隐患
+      * */
+      var obj = eval("(" + str + ")");
+
+      console.log(obj);
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

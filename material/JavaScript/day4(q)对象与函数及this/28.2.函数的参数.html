@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+      /*
+      * 定义一个用来求两个数和的函数
+      * */
+
+
+
+      function sum(a,b){
+
+        console.log(a+b);
+
+      }
+
+      /*
+      * 调用函数时的解析其不会检查实参的类型
+      *   所以要注意，是否有可能会接受到非法的参数，如有可能则需要对参数进行类型检查
+      * 函数的实参可以使任意的数据类型
+      * */
+      /*
+      * sum(23,42);
+      * sum(123,'hello')*/
+
+      /*
+      * 调用函数时，解析器也不会检查实参的数量
+      *   多余参数不会被赋值
+      * 如果实参的数量少于形参的数量，则没有对应实参的形参将是undefined
+      *
+      * */
+      sum(123,134,'hello',345,false);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

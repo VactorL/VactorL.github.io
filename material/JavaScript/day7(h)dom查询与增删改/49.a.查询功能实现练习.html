@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        /*
+        * 定义一个函数，专门为指定元素绑定单击响应函数
+        *   参数：
+        *       idStr   目标对象的id属性值
+        *       fun     事件的回调函数，当单机元素时，该函数会被触发
+        * */
+
+        function btnClick(idStr , fun){
+            var btn = document.getElementById(idStr);
+            btn.onclick = fun;
+        }
+
+        window.onload = function(){
+
+            //查找#bj节点
+
+            var btn01 = document.getElementById("btn1");
+            btn01.onclick = function(){
+                var bj = document.getElementById("bj");
+                //innerHTML 通过这个属性可以获取到元素内部的html代码
+                alert(bj.innerHTML);
+            }
+
+            //查找所有li节点
+
+            var btn02 = document.getElementById("btn2");
+            btn02.onclick = function(){
+                //getElementsByTagName() 根据标签名获取一组元素对象
+                //返回一个类数组对象，所有查询到的元素会封装到数组中
+                var lis = document.getElementsByTagName("li");
+                alert(lis.length);
+            }
+
+            //查找name=gender的所有节点
+
+            var btn03 = document.getElementById(btn03);
+            btn03.onclick = function(){
+                var inputs = document.getElementsByName("gender");
+                /*
+                * 对于自结束标签，innerHTML没有意义
+                * */
+                alert(inputs.value);
+                /*
+                * 如需读取元素节点属性，
+                *   直接使用元素.属性名
+                *       例子：元素.id 元素.name 元素.value
+                *       注意：class属性不能采用这种方式，
+                *           读取class属性时需要使用元素.className
+                * */
+            }
+
+            //查找#city下所有li节点
+
+            var btn04 = document.getElementById("btn04");
+            btn04.onclick = function(){
+                var city = document.getElementById("city");
+                var lis = city.getElementsByTagName("li");
+            }
+
+            //返回#city的所有子节点
+
+            /*
+            * childNodes属性会获取包括文本节点在内的所有节点
+            * 根据DOM标签，标签间的空白也会当成文本节点
+            *
+            * children属性可以获取当前元素的所有子元素(※推荐使用)
+            * */
+
+            var btn05 = document.getElementById("btn05");
+            btn04.onclick = function(){
+                var city = document.getElementById("city");
+                var cns = city.childNodes;
+                var cns2 = city.children;
+            }
+
+            //返回#phone的第一个子节点
+
+            var btn06 = document.getElementById("btn06");
+            btn06.onclick = function(){
+                var phone = document.getElementById("phone");
+                var fir = phone.firstElementChild;
+            }
+
+            //返回#bj的父节点(获取元素)
+
+            btnClick("btn07" , function(){
+               var bj = document.getElementById("bj");
+               var pn = bj.parentNode;
+               alert(pn.innerHTML);
+
+               /*
+               * innerText
+               *    - 获取元素内部的文本内容
+               *    - 和innerHTML类似，但会自动将html去除
+               * */
+
+            });
+
+            //返回#android的额前一个兄弟节点(可能获取到空白文本)
+
+            btnClick("btn08" , function(){
+                var and = document.getElementById("android");
+                var ps = and.previousSibling;
+            });
+
+            //读取#username的value属性值
+
+            btnClick("btn09" , function(){
+                var un = document.getElementById("username");
+                alert(un.value);
+            });
+
+            //设置#username的value属性值
+
+            btnClick("btn10" , function(){
+
+            });
+
+            //返回#bj的文本值
+
+            btnClick("btn11" , function(){
+
+            });
+
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+      /*
+      * 向页面中输出连续的数字
+      *
+      * 循环语句：
+      *   通过循环语句，可以反复执行一段代码多次
+      *
+      * while循环
+      *   - 语法：
+      *       while(条件表达式){
+      *           语句...
+      *       }
+      *
+      * do...while循环
+      *   - 语法：
+      *       do{
+      *           语句...
+      *       }while(条件表达式)
+      *   - 执行流程：
+      *       do...while语句在执行时，限制性循环体，
+      *       循环体执行完毕以后，再对while后条件表达式进行判断，
+      *       结果为true：继续执行循环体
+      *       结果为false：终止循环
+      *
+      *       while与do...while语句类似
+      *       不同：while 先判断后执行
+      *            do...while 先执行后判断(可以保证循环体至少被执行一次)
+      * */
+
+      /*
+      * 将表达式写死为true的循环，叫做死循环
+      * 该循环不会停止，除非浏览器关闭，死循环在开发中慎用
+      * */
+
+      var n = 1;
+
+      while(true){
+
+        console.log(n++);
+
+        if(n == 3){            //跳出循环
+            break;
+        }
+
+      }
+
+      //创建一个循环，往往需要三个步骤
+
+      //1.初始化一个变量
+      var i = 0;
+
+      //2.在循环中设置一个条件表达式
+      while(i < 10){
+          document.write(i++ + "<br />");
+          //3.定义一个更新表达式，每次更新初始化变量
+      }
+
+      do{
+          document.write(i++ + "<br />");
+      }while(i <= 10);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

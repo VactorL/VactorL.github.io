@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+
+    #box1{
+      width: 200px;
+      height: 200px;
+      background-color: #125312;
+    }
+    #s1{
+      background-color: #606030;
+    }
+  </style>
+  <script>
+
+    /*
+    * 事件冒泡 (Bubble)
+    *   - 指事件的向上传导，当后代元素被触发时，其祖先的相同元素也会被触发
+    *   - 在开发中，大部分冒泡是有用的
+    * */
+
+    window.onload = function () {
+
+      var s1 = document.getElementById("s1");
+      s1.onclick = function (event) {
+        // 兼容 IE8
+        event = event || window.event;
+        alert("Spanish!");
+
+        // 阻止事件冒泡
+        event.cancelBubble = true;
+      };
+
+      var box1 = document.getElementById("box1");
+      box1.onclick = function () {
+        alert("Divided!");
+      };
+
+      document.body.onclick = function () {
+        alert("Body!");
+      };
+
+    };
+
+  </script>
+</head>
+<body>
+  <div id="box1">
+    Box1
+    <span id="s1">Span</span>
+  </div>
+
+</body>
+</html>

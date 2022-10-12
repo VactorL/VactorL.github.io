@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script>
+
+            /*
+            * BOM
+            *   - 浏览器对象模型
+            *   - BOM可以使我们通过JS来操作浏览器
+            *   - 在BOM中为我们提供了一组对象，用来完成对浏览器的操作
+            *   - BOM对象
+            *       Window
+            *           - 代表整个浏览器窗口，同时window也是网页中的全局对象
+            *       Navigator
+            *           - 代表当前浏览器信息，通过该对象可以识别不同浏览器
+            *       Location
+            *           - 代表当前浏览器的地址栏信息，获取地址/跳转页面
+            *       History
+            *           - 代表浏览器的历史记录，操作浏览器的历史记录
+            *               由于隐私原因，该对象不能获取到具体的浏览记录，只能操作浏览器向前或向后翻页
+            *               而且该操作只在当次访问时有效
+            *       Screen
+            *           - 代表用户屏幕的信息，可以获取到用户显示器的相关信息(用的不多)
+            *
+            *       这些对象在浏览器中都是作为window的属性保存(全局对象)
+            *           可以通过window对象来使用，也可以直接使用
+            * */
+
+            /*
+            * Navigator
+            *   - 代表当前浏览器信息，通过该对象可以识别不同浏览器
+            *   - 由于历史原因，Navigator对象中的大部分属性已经不能帮助我们识别浏览器
+            *   - 一般我们只会使用userAgent来判断浏览器的信息，
+            *       userAgent是一个字符串，这个字符串中包含用来描述浏览器信息的内容
+            *       不同浏览器会有不同的userAgent
+            * 火狐：
+            *
+            * Chrome：
+            *   Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36
+            * IE：
+            *
+            * */
+
+            console.log(navigator.userAgent);
+
+            var ua = navigator.userAgent;
+
+            if(/chrome/i.test(ua)){
+                console.log("Chrome");
+            }else if(/firefox/i.test(ua)){
+                console.log("FireFox");
+            }else if(/msie/i.test(ua)){
+                console.log("IE");
+            }
+
+            /*
+            * 若通过userAgent不能判断，还可以通过一些浏览器中特有的对象，来判断浏览器的信息
+            * 比如：ActiveXObject
+            * */
+            if("ActiveXObject" in window){
+                alert("爬");//识别IE10及一下
+            }else{
+                alert("来来来");
+            }
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

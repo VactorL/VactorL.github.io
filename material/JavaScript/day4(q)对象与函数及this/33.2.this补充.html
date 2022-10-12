@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+      //
+      var name = '全局';
+
+      //
+      function func(){
+        console.log(this.name);
+      }
+
+      //
+      var obj1 = {
+        name:'Victor',
+        func:func
+      };
+
+      var obj2 = {
+        name:'Doris',
+        func:func
+      };
+
+
+      obj2.func();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

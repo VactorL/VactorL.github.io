@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+      #box1{
+        width: 100px;
+        height: 100px;
+        background-color: #ABEE11;
+        position: absolute;
+      }
+      #box2{
+        width: 100px;
+        height: 100px;
+        background-color: #66DDFF;
+        position: absolute;
+        left: 200px;
+        top: 300px;
+      }
+
+    </style>
+
+    <script>
+
+      window.onload = function () {
+
+        /*
+        * 拖拽流程：
+        * 1.鼠标在被拖拽元素上按下时
+        * 2.鼠标移动时，元素跟随
+        * 3.鼠标松开时，元素停止
+        * */
+
+        //获取box1
+        var box1 = document.getElementById("box1");
+
+        //为box1绑定一个鼠标按下事件
+        //当鼠标在被拖拽元素上按下时，开始拖拽
+        box1.onmousedown = function (event) {
+
+          box1.setCapture && box1.setCapture();
+
+          event = event || window.event;
+          //div的水平偏移量 鼠标.clientX - 元素.offsetLeft
+          //div的垂直偏移量 鼠标.clientY - 元素.offsetTop
+          var ol = event.clientX - box1.offsetLeft;
+          var ot = event.clientY - box1.offsetTop;
+
+          //为document绑定onmousemove事件
+          document.onmousemove = function (event) {
+
+            event = event || window.event;
+            //当鼠标移动时，被拖拽元素跟随鼠标移动
+            //获取鼠标坐标
+            var left = event.clientX - ol;
+            var top = event.clientY - ot;
+
+            //修改box1的位置
+            box1.style.left = left+"px";
+            box1.style.top = top+"px";
+          };
+
+          //为document绑定鼠标松开事件
+          document.onmouseup = function () {
+            //当鼠标松开时，被拖拽元素固定在当前位置
+            //取消document.onmousemove事件
+            document.onmousemove = null;
+
+            //取消document.onmouseup事件
+            document.onmouseup = null;
+
+            //当鼠标松开，取消对事件的捕获
+            box1.releaseCapture && box1.releaseCapture();
+          };
+
+          /*
+          * 当我们拖拽一个网页中的内容时，浏览器会默认去搜索引擎搜索内容，
+          *   此时会导致拖拽功能异常，这个是浏览器提供的默认行为，
+          *   若不希望发生这个行为，则可以通过 return false来取消默认行为
+          *
+          * 但是这招对IE8不起作用
+          * */
+
+        };
+
+      };
+
+    </script>
+  </head>
+  <body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+  </body>
+</html>

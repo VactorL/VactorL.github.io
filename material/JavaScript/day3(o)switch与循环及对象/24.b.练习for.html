@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+      document.write("水仙花数有：");
+
+      for(var i = 100 , a , b , c ; i < 1000 ; i++ ){
+
+        a = i % 10;
+        b = parseInt((i % 100) / 10);
+        c = parseInt(i / 100);
+
+        if(i == (a*a*a + b*b*b + c*c*c)){
+
+          document.write(i + ".");
+
+        }
+
+      }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

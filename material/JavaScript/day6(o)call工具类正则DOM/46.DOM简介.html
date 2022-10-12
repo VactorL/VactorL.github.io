@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+      /*
+      * DOM: Document Object Model 文档对象模型
+      * JS通过DOM对HTML文档进行操作
+      *
+      * Node节点：构成HTML文档最基本的单元
+      *                 nodeName    nodeType    nodeValue
+      *   Fir.文档节点   #document       9          null
+      *   Sec.元素节点     标签名         1          null
+      *   Thi.属性节点     属性名         2          属性值
+      *   Fou.文本节点     #text         3        △文本内容
+      * */
+
+    </script>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <script>
+        /*
+        *   浏览器已经为我们提供了 文档节点 对象，这个对象是window属性
+        *       可以在页面中直接使用，文档节点代表的是整个网页
+        * */
+        //console.log(document);
+
+        //获取button对象
+        var btn = document.getElementById("btn");
+
+        //修改按钮文字
+        console.log(btn.innerHTML);
+        btn.innerHTML = "Button";
+
+
+    </script>
+
+</body>
+</html>

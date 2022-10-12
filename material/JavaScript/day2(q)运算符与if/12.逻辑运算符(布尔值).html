@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+      /*
+      * JS中为我们提供了三种逻辑运算符
+      * ! 非
+      *     - ! 用来对一个值进行非运算
+      *     - 非运算：对一个布尔值进行取反操作，
+      *         true变false，false变true
+      *     - 对非布尔值，先转换成布尔值，然后再取反
+      *         所以，可以用 !! 将其他的数据类型转换为布尔值
+      *         原理和Boolean()函数一样
+      *
+      * && 与
+      *     - &&可以对符号两侧的值进行与运算并返回结果
+      *     - 运算规则
+      *         - 只要有一个值为false就返回false
+      *             只有两个值都为true时才会返回true
+      *         - JS中的“与”属于短路的与，如果第一个值为false，则不会再看第二个
+      * || 或
+      *     - ||可以对符号两侧的值进行或运算并返回结果
+      *     - 运算规则
+      *         - 只要有一个值为true就返回true
+      *             只有两个值都为false时才会返回false
+      *         - JS中的“或”属于短路的或，如果第一个值为true，则不会再看第二个
+      *
+      * */
+
+      true && alert("到我了！");
+      false && alert("到不了我了...");       //证明短路
+      false || alert("我参与了！");
+      true || alert("为啥没我！");           //证明短路
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

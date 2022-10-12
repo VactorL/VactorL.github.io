@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        .b1{
+            width: 100px;
+            height: 100px;
+            background-color: #b2186c;
+        }
+        .b2{
+            width: 150px;
+            height: 50px;
+            background-color: #2186cb;
+        }
+
+    </style>
+
+    <script>
+
+        window.onload = function () {
+
+            var box1 = document.getElementById("box1");
+            var btn1 = document.getElementById("btn1");
+            var btn2 = document.getElementById("btn2");
+            var btn3 = document.getElementById("btn3");
+
+            btn1.onclick = function () {
+
+                /*
+                * 通过style属性修改元素样式，每修改一个样式，浏览器就需要重新渲染一次页面
+                *   这样的执行性能较差，且修改多个样式时，较为麻烦
+                * */
+                //box1.style.width = "200px";
+
+                /*
+                * 希望：一行代码同时修改多个样式
+                * */
+
+                //修改box1的class属性
+                /*
+                * 通过修改元素的class属性，间接修改样式
+                * 这样只需要修改一次，即可实现修改多个样式，
+                *   浏览器只需重新渲染一次页面，性能较高
+                *   且可以使表现和行为进一步的分离
+                * */
+                //box1.className = "b2";
+                addClass(box1 , "b2");
+
+            };
+
+            btn2.onclick = function () {
+
+                removeClass(box1 , "b2");
+
+            }
+
+            btn3.onclick = function () {
+
+                toggleClass(box1 , "b2");
+
+            }
+
+        };
+
+        /*
+        * 用来向元素中添加指定的class属性值
+        *   参数：
+        *       Fir.目标对象
+        *       Sec.class值
+        * */
+        function addClass (obj , cn) {
+
+            if(!hasClass(obj , cn)){
+                obj.className += " " + cn;
+            }
+        }
+
+        /*
+        * 判断元素中是否含有指定的class属性值
+        *   参数：
+        *       Fir.目标对象
+        *       Sec.class值
+        * */
+        function hasClass (obj , cn) {
+
+            //判断obj中有没有cn class
+            //创建正则表达式，字面量，写死了，我们需要动态的表达式
+            //var reg = /\bb2\b/;
+
+            //创建构造函数，动态正则表达式
+            var reg = new RegExp("\\b" + cn + "\\b");
+
+            return reg.test(obj.className);
+
+        }
+
+        function removeClass (obj , cn) {
+
+            var reg = new RegExp("\\b" + cn + "\\b");
+
+            if(reg){
+
+                obj.className = obj.className.replace(reg , "");
+
+            }
+
+        }
+
+        /*
+        * toggleClass用来切换类
+        *   若元素中具有该类，则删除
+        *   若元素中没有该类，则添加
+        * */
+        function toggleClass (obj , cn) {
+
+            if(hasClass(obj , cn)){
+
+                removeClass(obj , cn);
+
+            }else{
+
+                addClass(obj , cn);
+
+            }
+            
+        }
+
+    </script>
+</head>
+<body>
+
+    <button id="btn1">AddClass</button>
+    <button id="btn2">DeleteClass</button>
+    <button id="btn3">Toggle</button>
+    <br><br>
+    <div id="box1" class="b1"></div>
+</body>
+</html>

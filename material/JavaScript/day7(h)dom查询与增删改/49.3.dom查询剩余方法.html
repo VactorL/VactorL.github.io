@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+      window.onload = function(){
+
+        //获取body标签
+        //var body = document.getElementsByTagName("body")[0];
+
+        /*/!*
+        * 在document中有一个属性body，保存的是body的引用
+        * *!/
+        var body = document.body;
+
+        /!*
+        * document.documentElement保存的是html根标签
+        * *!/
+        var de = document.documentElement;
+
+        /!*
+        * document.all 代表页面中的所有元素
+        * *!/
+        var all = document.all;
+
+        console.log(body);
+        console.log(all);*/
+
+        /*/!*
+        * 根据元素的class属性值查询一组元素节点对象(ie8及一下不支持)
+        * *!/
+        var box1 = document.getElementsByClassName("box1");
+
+        console.log(box1.length);*/
+
+        //var divs = document.getElementsByTagName("div");
+
+        //获取class为box1中的所有的div
+        /*
+        * document.querySelector()
+        *   - 需要一个选择器的字符作为参数，可以根据一个CSS选择器来查询一个元素节点对象
+        *   - 该方法总会返回唯一的一个元素，如果满足条件的元素有多个，那么它只会返回第一个
+        *
+        * document.querySelectorAll()
+        *   - 与上一个方法一样
+        *   - 不同：会将符合条件的元素封装到一个数组中并返回
+        * */
+        var div = document.querySelector(".box1 div");
+
+        console.log(div);
+
+      };
+
+    </script>
+</head>
+<body>
+  <div class="box1">
+    <div></div>
+    <div></div>
+  </div>
+  <div class="box2"></div>
+  <div class="box2"></div>
+
+</body>
+</html>

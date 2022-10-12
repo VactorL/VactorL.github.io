@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+      console.time("Timer1");
+
+      for(var i = 2 ; i <=100000 ; i++){
+
+        var prime = true;
+
+        for(var j = 2 ; j <= Math.sqrt(i) ; j++){        //提升性能(中级)
+
+          if(i % j == 0){
+
+            prime = false;
+            break;                                      //提升性能(初级)
+          }
+
+        }
+
+        if(prime){
+
+          document.write(i + "&nbsp");
+
+        }
+
+      }
+
+      console.timeEnd("Timer1");
+
+
+
+    </script>
+
+    <style>
+
+      span{
+
+        display: inline-block;
+        width: 40px;
+        height: 20px;
+
+      }
+
+    </style>
+
+</head>
+<body>
+
+</body>
+</html>

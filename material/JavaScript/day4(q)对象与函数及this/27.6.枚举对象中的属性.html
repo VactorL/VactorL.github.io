@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+      var obj1 = {
+
+        name:'Victor',
+        age:18,
+        gender:'Male',
+        hobby:'tennis',
+        method:function(){
+          console.log('这也行？');
+        }
+
+      };
+
+      /*
+      * 枚举对象中的属性
+      * 使用 for...in 语句
+      *   语法：
+      *     for(var 变量 in 对象){
+      *
+      *     }
+      * */
+
+      for(var n in obj1){
+        console.log(n + ':' + obj1[n]);
+      }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

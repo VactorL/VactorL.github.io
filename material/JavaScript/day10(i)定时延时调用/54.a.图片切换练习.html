@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        #img1{
+            width: 600px;
+            height: 345px;
+        }
+
+    </style>
+    <script>
+        
+        window.onload = function () {
+
+            var imgArr = ["/day7(h)/img/1.jpg" , "/day7(h)/img/2.jpg" , "/day7(h)/img/3.jpg" , "/day7(h)/img/4.jpg" , "/day7(h)/img/5.jpg"];
+            var index = 0;
+            var timer;
+
+            var img1 = document.getElementById("img1");
+            var btn1 = document.getElementById("btn1");
+            var btn2 = document.getElementById("btn2");
+
+            btn1.onclick = function () {
+
+                //防止相同定时器多开叠加，无法关闭，每开一个新的，关闭上一个
+                clearInterval(timer);
+
+                timer = setInterval(function () {
+
+                    index++;
+
+                    index = index % imgArr.length;
+
+                    img1.src = imgArr[index];
+
+                },400);
+
+            }
+
+            btn2.onclick = function () {
+
+                /*
+                * clearInterval()可以接收任意参数，
+                *   若参数是一个有效的定时器的标识，则停止对应的定时器
+                *   若参数不是有效的标识，则什么也不做
+                * */
+
+                clearInterval(timer);
+
+            }
+
+        };
+        
+    </script>
+</head>
+<body>
+    <img src="/day7(h)dom查询与增删改/img/1.jpg" id="img1"/>
+    <button id="btn1">Start</button>
+    <button id="btn2">Stop</button>
+</body>
+</html>

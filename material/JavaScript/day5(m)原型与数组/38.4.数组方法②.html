@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+      var arr = ['name1','name2','name3',"name4","name5","name6"];
+
+      /*
+      * slice()
+      *     - 从数组中提取指定元素
+      *     - 参数
+      *         1.截取开始的位置索引，包含开始索引
+      *         2.截取结束的位置索引，不包含结束索引
+      *             - 第二个参数可以省略不写，此时会截取从开始索引往后的所有元素
+      *         - 索引可以传递一个负值
+      * */
+
+      var sarr = arr.slice(2,5);
+
+      console.log(sarr);
+
+      /*
+      * splice()
+      *     - 删除数组中的指定元素
+      *     - 会影响到原数组，会将指定元素从原数组中删除
+      *         并将被删除的元素作为返回值返回
+      *     - 参数
+      *         第一个：表示开始位置索引
+      *         第二个：表示删除的数量
+      *         第三个及以后...：
+      *             可以传递新的元素，这些元素将会自动插入到开始索引位置的前面
+      * */
+
+      var sar = arr.splice(1,3,'name7');
+      console.log(sar);
+      console.log(arr);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
