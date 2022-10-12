@@ -1,0 +1,48 @@
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover{
+    color: #C0C0C0;
+}
+
+.frame{
+    margin: 8px;
+}
+
+.title{
+    padding: 10px 20px;
+    color: #540083;
+    font-size: 35px;
+    line-height: 45px;
+}
+
+.bar-left{
+    float: left;
+    width: 250px;
+    border-right: solid 1px #A9A9A9;
+}
+
+.barL-title{
+    font-size: 18px;
+    line-height: 40px;
+}
+
+.barL-subT{
+    padding-left: 33px;
+    line-height: 30px;
+}
+
+.barL-subT li a{
+    color: #696969;
+}
+
+.barL-subT li a:hover{
+    color: #C0C0C0;
+}
+
+.barL-nav li ul{
+    display: none;
+}
+
