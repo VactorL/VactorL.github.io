@@ -3,68 +3,70 @@
   <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script>
-
-      window.onload = function () {
-
-        var u1 = document.getElementById("u1");
-
-        var btn1 = document.getElementById("btn1");
-
-        btn1.onclick = function () {
-
-          var li = document.createElement("li");
-          li.innerHTML = "<li><a href=\"javascript:;\">新建超链接</a></li>";
-
-          u1.appendChild(li);
-
-        }
-
-        /*
-        * 此方法绑定麻烦，且只能绑定已有元素
-        * */
-        /*var allA = document.getElementsByTagName("a");
-
-        for (var i = 0 ; i < allA.length ; i++) {
-
-          allA[i].onclick = function () {
-            alert("Bingo!");
-          }
-
-        }*/
-
-        /*
-        * 我们希望：只绑定一次事件，即可应用到多个元素上，即使元素是后加的
-        * 可以尝试绑定给元素的共同祖先元素
-        *
-        * 事件委派
-        *   - 指将事件统一绑定给元素的共同祖先元素，这样，当后代元素上的事件触发时，会一直冒泡到祖先元素
-        *       从而通过祖先元素的响应函数来处理事件
-        * */
-        u1.onclick = function (event) {
-
-          event = event || window.event;
-
-          if(event.target.className == "link"){
-            alert("bingo!");
-          };
-
-        }
-        
-      }
-
-    </script>
+    
   </head>
   <body>
+    <xmp>
+      <script>
 
-    <button id="btn1">Press</button>
-    <ul id="u1">
+        window.onload = function () {
+  
+          var u1 = document.getElementById("u1");
+  
+          var btn1 = document.getElementById("btn1");
+  
+          btn1.onclick = function () {
+  
+            var li = document.createElement("li");
+            li.innerHTML = "<li><a href=\"javascript:;\">新建超链接</a></li>";
+  
+            u1.appendChild(li);
+  
+          }
+  
+          /*
+          * 此方法绑定麻烦，且只能绑定已有元素
+          * */
+          /*var allA = document.getElementsByTagName("a");
+  
+          for (var i = 0 ; i < allA.length ; i++) {
+  
+            allA[i].onclick = function () {
+              alert("Bingo!");
+            }
+  
+          }*/
+  
+          /*
+          * 我们希望：只绑定一次事件，即可应用到多个元素上，即使元素是后加的
+          * 可以尝试绑定给元素的共同祖先元素
+          *
+          * 事件委派
+          *   - 指将事件统一绑定给元素的共同祖先元素，这样，当后代元素上的事件触发时，会一直冒泡到祖先元素
+          *       从而通过祖先元素的响应函数来处理事件
+          * */
+          u1.onclick = function (event) {
+  
+            event = event || window.event;
+  
+            if(event.target.className == "link"){
+              alert("bingo!");
+            };
+  
+          }
+          
+        }
+  
+      </script>
 
-      <li><a href="javascript:;" class="link">超链接1</a></li>
-      <li><a href="javascript:;" class="link">超链接2</a></li>
-      <li><a href="javascript:;" class="link">超链接3</a></li>
+      <button id="btn1">Press</button>
+      <ul id="u1">
 
-    </ul>
+        <li><a href="javascript:;" class="link">超链接1</a></li>
+        <li><a href="javascript:;" class="link">超链接2</a></li>
+        <li><a href="javascript:;" class="link">超链接3</a></li>
 
+      </ul>
+    </xmp>
   </body>
 </html>

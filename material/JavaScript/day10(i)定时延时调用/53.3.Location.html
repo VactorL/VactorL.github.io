@@ -3,53 +3,57 @@
   <head>
     <meta charset="UTF-8">
     <title>Location</title>
-    <script>
-
-      /*
-      * Location
-      *   - 封装了浏览器地址栏信息
-      * */
-
-      window.onload = function () {
-
-        //获取按钮对象
-        var btn = document.getElementById("btn");
-
-        btn.onclick = function () {
-
-          //若直接打印location，可以获取地址栏信息，即：当前页面的完整路径
-          //alert(location);
-
-          /*
-          * 如果将location属性修改为一个绝对路径/相对路径
-          *   页面会自动跳转到该路径，并生成相应的历史记录
-          * */
-          //location = "http://www.baidu.com";
-
-          /*
-          * assign()
-          *   - 用来跳转到其他页面，作用和直接修改location相同
-          * location.assign("http://www.baidu.com");
-          *
-          * reload()
-          *   - 刷新当前页面
-          *   - 传递true作为参数，则会强制清空缓存刷新页面
-          * location.reload(true);
-          *
-          * replace()
-          *   - 用一个页面替换当前页面，但不生成历史记录
-          * location.replace("http://www.baidu.com");
-          * */
-
-        }
-
-      }
-
-    </script>
+    
   </head>
   <body>
-    <button id="btn">Press</button>
-    <h1>Location</h1>
-    <a href="../day9(k)冒泡与事件绑定传播BOM/53.1.BOMintro及Navigator.html">go 53.1.BOM</a>
+    <xmp>
+      <script>
+
+        /*
+        * Location
+        *   - 封装了浏览器地址栏信息
+        * */
+  
+        window.onload = function () {
+  
+          //获取按钮对象
+          var btn = document.getElementById("btn");
+  
+          btn.onclick = function () {
+  
+            //若直接打印location，可以获取地址栏信息，即：当前页面的完整路径
+            //alert(location);
+  
+            /*
+            * 如果将location属性修改为一个绝对路径/相对路径
+            *   页面会自动跳转到该路径，并生成相应的历史记录
+            * */
+            //location = "http://www.baidu.com";
+  
+            /*
+            * assign()
+            *   - 用来跳转到其他页面，作用和直接修改location相同
+            * location.assign("http://www.baidu.com");
+            *
+            * reload()
+            *   - 刷新当前页面
+            *   - 传递true作为参数，则会强制清空缓存刷新页面
+            * location.reload(true);
+            *
+            * replace()
+            *   - 用一个页面替换当前页面，但不生成历史记录
+            * location.replace("http://www.baidu.com");
+            * */
+  
+          }
+  
+        }
+  
+      </script>
+
+      <button id="btn">Press</button>
+      <h1>Location</h1>
+      <a href="../day9(k)冒泡与事件绑定传播BOM/53.1.BOMintro及Navigator.html">go 53.1.BOM</a>
+    </xmp>
   </body>
 </html>

@@ -3,33 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script>
-
-        var score = 61;
-
-        switch (parseInt(score/20)){            //  方式一
-            case 3:
-            case 4:
-            case 5:
-                console.log("Pass!");
-                break;
-            default:
-                console.log("Fail!");
-                break;
-        }
-
-        switch (true) {                         //  方式二
-            case score >= 60:
-                console.log("Pass!");
-                break;
-            default:
-                console.log("Fail!");
-                break;
-        }
-
-    </script>
+    
 </head>
 <body>
+    <xmp>
+        <script>
 
+            var score = 61;
+    
+            switch (parseInt(score/20)){            //  方式一
+                case 3:
+                case 4:
+                case 5:
+                    console.log("Pass!");
+                    break;
+                default:
+                    console.log("Fail!");
+                    break;
+            }
+    
+            switch (true) {                         //  方式二
+                case score >= 60:
+                    console.log("Pass!");
+                    break;
+                default:
+                    console.log("Fail!");
+                    break;
+            }
+    
+        </script>
+    </xmp>
 </body>
 </html>

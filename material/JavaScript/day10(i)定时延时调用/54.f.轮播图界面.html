@@ -3,195 +3,198 @@
   <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <style>
-
-      *{
-        margin: 0;
-        padding: 0;
-      }
-      #outer{
-        width: 620px;
-        height: 345px;
-        padding: 10px 0;
-        margin: 50px auto;
-        background-color: #12B0F2;
-        /*开启相对定位*/
-        position: relative;
-        /*裁剪溢出内容*/
-        overflow: hidden;
-      }
-      .imgBox{
-        width: 600px;
-        height: 345px;
-      }
-      #imgList{
-        /*去除项目符号*/
-        list-style: none;
-        /*开启绝对定位*/
-        position: absolute;
-        /*每偏移620px，图片向后切一张*/
-        /*left: -620px;*/
-      }
-      #imgList li{
-        float: left;
-        margin: 0 10px;
-      }
-      #navDiv{
-        position: absolute;
-        bottom: 15px;
-
-      }
-      #navDiv a{
-        float: left;
-        width: 15px;
-        height: 15px;
-        background-color: #238419;
-        margin: 0 5px;
-        /*设置透明*/
-        opacity: 0.7;
-        /*兼容IE8透明*/
-        filter: alpha(opacity=30);
-      }
-      /*设置鼠标移入效果*/
-      #navDiv a:hover{
-        background-color: #112222;
-      }
-
-    </style>
-
-    <script src="js/tool.js"></script>
-    <script>
-
-      window.onload = function () {
-
-        var imgList = document.getElementById("imgList");
-        var imgArr = document.getElementsByTagName("img");
-
-        //设置imgList宽度
-        imgList.style.width = 620*imgArr.length + "px";
-
-        /*设置导航按钮居中*/
-        var navDiv = document.getElementById("navDiv");
-        var outer = document.getElementById("outer");
-        //设置navDiv的left值
-        navDiv.style.left = (outer.offsetWidth - navDiv.offsetWidth)/2 + "px";
-
-        //默认显示图片的案例
-        var index = 0;
-
-
-        var allA = document.getElementsByTagName("a");
-
-        //设置默认选中效果
-        allA[index].style.backgroundColor = "#112222";
-
-        /*
-        * 点击超链接切换图片
-        * */
-
-        //为所有的超链接绑定单机响应函数
-        for (var i = 0 ; i < allA.length ; i++) {
-
-          //为每一个超链接都添加一个num属性
-          allA[i].num = i;
-
-          allA[i].onclick = function () {
-
-            //关闭自动切换的定时器
-            clearInterval(timer);
-
-            //获取超链接索引，并将其设置为index
-            index = this.num;
-
-            //切换图片
-            //imgList.style.left = -620*index + "px";
-
-            //并修改正被选中的a
-            setA();
-
-            move(imgList , "left" , -620*index , 30 , function () {
-              autoChange();
-            });
-
-          };
-
-        }
-
-        //自动切换图片
-        autoChange();
-
-        //定义一个自动切换定时器的标识
-        var timer;
-
-        //创建一个函数，用来开启自动切换图片
-        function autoChange () {
-
-          //开启定时器，定时切换图片
-          timer = setInterval(function () {
-
-            //使索引自增
-            index++;
-
-            index = index % imgArr.length;
-
-            //执行动画，切换图片
-            move(imgList , "left" , -620*index , 30 , function () {
-              //修改导航点
-              setA();
-            });
-
-          },3000);
-
-        }
-
-        //创建一个方法用来设置选中的a
-        function setA () {
-
-          if (index >= imgArr.length - 1){
-            //则将index设置为0
-            index = 0;
-
-            //此时显示最后一张，与第一张完全相同
-            //通过css将最后一张切换成第一张
-            imgList.style.left = 0;
-          }
-
-          for (var i = 0 ; i < allA.length ; i++) {
-            allA[i].style.backgroundColor = "";
-          }
-
-          //将选中的a变为选中色
-          allA[index].style.backgroundColor = "#112222";
-        }
-
-      };
-
-    </script>
+    
   </head>
   <body>
-    <!--创建外部div，作为容器-->
-    <div id="outer">
-      <!--创建一个ul，用于放置图片-->
-      <ul id="imgList">
+    <xmp>
+      <style>
 
-        <li><img src="/day7(h)dom查询与增删改/img/1.jpg" class="imgBox"></li>
-        <li><img src="/day7(h)dom查询与增删改/img/2.jpg" class="imgBox"></li>
-        <li><img src="/day7(h)dom查询与增删改/img/3.jpg" class="imgBox"></li>
-        <li><img src="/day7(h)dom查询与增删改/img/4.jpg" class="imgBox"></li>
-        <li><img src="/day7(h)dom查询与增删改/img/5.jpg" class="imgBox"></li>
-        <li><img src="/day7(h)dom查询与增删改/img/1.jpg" class="imgBox"></li>
+        *{
+          margin: 0;
+          padding: 0;
+        }
+        #outer{
+          width: 620px;
+          height: 345px;
+          padding: 10px 0;
+          margin: 50px auto;
+          background-color: #12B0F2;
+          /*开启相对定位*/
+          position: relative;
+          /*裁剪溢出内容*/
+          overflow: hidden;
+        }
+        .imgBox{
+          width: 600px;
+          height: 345px;
+        }
+        #imgList{
+          /*去除项目符号*/
+          list-style: none;
+          /*开启绝对定位*/
+          position: absolute;
+          /*每偏移620px，图片向后切一张*/
+          /*left: -620px;*/
+        }
+        #imgList li{
+          float: left;
+          margin: 0 10px;
+        }
+        #navDiv{
+          position: absolute;
+          bottom: 15px;
+  
+        }
+        #navDiv a{
+          float: left;
+          width: 15px;
+          height: 15px;
+          background-color: #238419;
+          margin: 0 5px;
+          /*设置透明*/
+          opacity: 0.7;
+          /*兼容IE8透明*/
+          filter: alpha(opacity=30);
+        }
+        /*设置鼠标移入效果*/
+        #navDiv a:hover{
+          background-color: #112222;
+        }
+  
+      </style>
+  
+      <script src="js/tool.js"></script>
+      <script>
+  
+        window.onload = function () {
+  
+          var imgList = document.getElementById("imgList");
+          var imgArr = document.getElementsByTagName("img");
+  
+          //设置imgList宽度
+          imgList.style.width = 620*imgArr.length + "px";
+  
+          /*设置导航按钮居中*/
+          var navDiv = document.getElementById("navDiv");
+          var outer = document.getElementById("outer");
+          //设置navDiv的left值
+          navDiv.style.left = (outer.offsetWidth - navDiv.offsetWidth)/2 + "px";
+  
+          //默认显示图片的案例
+          var index = 0;
+  
+  
+          var allA = document.getElementsByTagName("a");
+  
+          //设置默认选中效果
+          allA[index].style.backgroundColor = "#112222";
+  
+          /*
+          * 点击超链接切换图片
+          * */
+  
+          //为所有的超链接绑定单机响应函数
+          for (var i = 0 ; i < allA.length ; i++) {
+  
+            //为每一个超链接都添加一个num属性
+            allA[i].num = i;
+  
+            allA[i].onclick = function () {
+  
+              //关闭自动切换的定时器
+              clearInterval(timer);
+  
+              //获取超链接索引，并将其设置为index
+              index = this.num;
+  
+              //切换图片
+              //imgList.style.left = -620*index + "px";
+  
+              //并修改正被选中的a
+              setA();
+  
+              move(imgList , "left" , -620*index , 30 , function () {
+                autoChange();
+              });
+  
+            };
+  
+          }
+  
+          //自动切换图片
+          autoChange();
+  
+          //定义一个自动切换定时器的标识
+          var timer;
+  
+          //创建一个函数，用来开启自动切换图片
+          function autoChange () {
+  
+            //开启定时器，定时切换图片
+            timer = setInterval(function () {
+  
+              //使索引自增
+              index++;
+  
+              index = index % imgArr.length;
+  
+              //执行动画，切换图片
+              move(imgList , "left" , -620*index , 30 , function () {
+                //修改导航点
+                setA();
+              });
+  
+            },3000);
+  
+          }
+  
+          //创建一个方法用来设置选中的a
+          function setA () {
+  
+            if (index >= imgArr.length - 1){
+              //则将index设置为0
+              index = 0;
+  
+              //此时显示最后一张，与第一张完全相同
+              //通过css将最后一张切换成第一张
+              imgList.style.left = 0;
+            }
+  
+            for (var i = 0 ; i < allA.length ; i++) {
+              allA[i].style.backgroundColor = "";
+            }
+  
+            //将选中的a变为选中色
+            allA[index].style.backgroundColor = "#112222";
+          }
+  
+        };
+  
+      </script>
 
-      </ul>
-     <!--创建导航按钮-->
-      <div id="navDiv">
-        <a href="javascript:;"></a>
-        <a href="javascript:;"></a>
-        <a href="javascript:;"></a>
-        <a href="javascript:;"></a>
-        <a href="javascript:;"></a>
+      <!--创建外部div，作为容器-->
+      <div id="outer">
+        <!--创建一个ul，用于放置图片-->
+        <ul id="imgList">
+
+          <li><img src="/day7(h)dom查询与增删改/img/1.jpg" class="imgBox"></li>
+          <li><img src="/day7(h)dom查询与增删改/img/2.jpg" class="imgBox"></li>
+          <li><img src="/day7(h)dom查询与增删改/img/3.jpg" class="imgBox"></li>
+          <li><img src="/day7(h)dom查询与增删改/img/4.jpg" class="imgBox"></li>
+          <li><img src="/day7(h)dom查询与增删改/img/5.jpg" class="imgBox"></li>
+          <li><img src="/day7(h)dom查询与增删改/img/1.jpg" class="imgBox"></li>
+
+        </ul>
+      <!--创建导航按钮-->
+        <div id="navDiv">
+          <a href="javascript:;"></a>
+          <a href="javascript:;"></a>
+          <a href="javascript:;"></a>
+          <a href="javascript:;"></a>
+          <a href="javascript:;"></a>
+        </div>
+
       </div>
-
-    </div>
-
+    </xmp>
   </body>
 </html>

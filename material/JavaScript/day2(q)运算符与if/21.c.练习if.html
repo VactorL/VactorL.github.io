@@ -3,50 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script>
-
-      var a = prompt("Please type in num1") - 0;    //prompt()返回值是String！！！！
-      var b = prompt("Please type in num2") - 0;
-      var c = prompt("Please type in num3") - 0;
-
-      var min = a < b ? a : b;
-      min = min < c ? min : c;
-
-      var max = a > b ? a : b;
-      max = max > c ? max : c;
-
-      console.log(max);
-
-      if(min == a && max == b){
-
-          alert(a + " <= " + c + " <= " + b);
-
-      }else if(min == b && max == a){
-
-          alert(b + " <= " + c + " <= " + a);
-
-      }else if(min == a && max == c){
-
-          alert(a + " <= " + b + " <= " + c);
-
-      }else if(min == c && max == a){
-
-          alert(c + " <= " + b + " <= " + a);
-
-      }else if(min == b && max == c){
-
-          alert(b + " <= " + a + " <= " + c);
-
-      }else{
-
-          alert(c + " <= " + a + " <= " + b);
-
-      }
-
-    </script>
+    
 </head>
 <body>
+    <xmp>
+        <script>
 
+            var a = prompt("Please type in num1") - 0;    //prompt()返回值是String！！！！
+            var b = prompt("Please type in num2") - 0;
+            var c = prompt("Please type in num3") - 0;
+      
+            var min = a < b ? a : b;
+            min = min < c ? min : c;
+      
+            var max = a > b ? a : b;
+            max = max > c ? max : c;
+      
+            console.log(max);
+      
+            if(min == a && max == b){
+      
+                alert(a + " <= " + c + " <= " + b);
+      
+            }else if(min == b && max == a){
+      
+                alert(b + " <= " + c + " <= " + a);
+      
+            }else if(min == a && max == c){
+      
+                alert(a + " <= " + b + " <= " + c);
+      
+            }else if(min == c && max == a){
+      
+                alert(c + " <= " + b + " <= " + a);
+      
+            }else if(min == b && max == c){
+      
+                alert(b + " <= " + a + " <= " + c);
+      
+            }else{
+      
+                alert(c + " <= " + a + " <= " + b);
+      
+            }
+      
+          </script>
+    </xmp>
 </body>
 </html>
 

@@ -3,40 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script>
-
-        /*
-        * && || 非布尔值的情况
-        *   - 对于非布尔值进行与或运算时，
-        *       会先将其转化为布尔值，然后在运算
-        *
-        * */
-
-        /*
-        * 与运算：true && true
-        * 与运算：如果第一个值为true，则必然返回第二个值
-        *        如果第一个值为false，则直接返回第一个值
-        *       注意！返回的是原值，不是true/false
-        * */
-
-        /*
-        * 或运算：true || true
-        * 或运算：如果第一个值为false，则必然返回第二个值
-        *        如果第一个值为true，则直接返回第一个值
-        *       注意！返回的是原值，不是true/false
-        * */
-
-        var add = 1 && 0;
-
-        console.log('result = ' + add);
-
-        var or = 0 || null;
-
-        console.log('or = ' + or);
-
-    </script>
+    
 </head>
 <body>
+    <xmp>
+        <script>
 
+            /*
+            * && || 非布尔值的情况
+            *   - 对于非布尔值进行与或运算时，
+            *       会先将其转化为布尔值，然后在运算
+            *
+            * */
+    
+            /*
+            * 与运算：true && true
+            * 与运算：如果第一个值为true，则必然返回第二个值
+            *        如果第一个值为false，则直接返回第一个值
+            *       注意！返回的是原值，不是true/false
+            * */
+    
+            /*
+            * 或运算：true || true
+            * 或运算：如果第一个值为false，则必然返回第二个值
+            *        如果第一个值为true，则直接返回第一个值
+            *       注意！返回的是原值，不是true/false
+            * */
+    
+            var add = 1 && 0;
+    
+            console.log('result = ' + add);
+    
+            var or = 0 || null;
+    
+            console.log('or = ' + or);
+    
+        </script>
+    </xmp>
 </body>
 </html>

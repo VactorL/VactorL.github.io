@@ -3,75 +3,78 @@
   <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <style>
-
-      #box1{
-        width: 100px;
-        height: 100px;
-        background-color: #10BAD7;
-      }
-
-    </style>
-    <script>
-
-      window.onload = function () {
-
-        /*
-        * 键盘事件：
-        *   onkeydown
-        *       - 按键按下
-        *       - 对于onkeydown，如果按住按键不送开，则事件一直触发
-        *       - 连续触发时，第一次和第二次之间的间隔会略长一些，其他会非常快
-        *             防止误操作发生
-        *   onkeyup
-        *       - 按键松开
-        *       -
-        *
-        * 键盘事件一般会绑定给可以获取到焦点的对象或者是document
-        * */
-
-        document.onkeydown = function (event) {
-
-          event = event || window.event;
-
-          /*
-          * 可通过keyCode获取按键的编码
-          *   通过它可以判断哪个按键被按下
-          * 除了keyCode，事件对象中还提供了几个属性
-          *   altKey
-          *   ctrlKey
-          *   shiftKey
-          *       - 这三个用来判断alt ctrl 和 shift是否被按下
-          *           如果按下则返回true，否则返回false
-          * */
-
-          //判断y是否被按下
-          if(event.keyCode == 89){
-            console.log("Y is pressed.");
-          }
-
-        };
-
-        document.onkeyup = function () {
-
-          console.log("Key is released.");
-
-        };
-
-        var input = document.getElementsByTagName("input")[0];
-
-        input.onkeydown = function () {
-          console.log("Key is pressed.");
-        };
-
-      };
-
-    </script>
+    
   </head>
   <body>
-    <input type="text">
-    <br><br>
-    <div id="box1"></div>
+    <xmp>
+      <style>
 
+        #box1{
+          width: 100px;
+          height: 100px;
+          background-color: #10BAD7;
+        }
+  
+      </style>
+      <script>
+  
+        window.onload = function () {
+  
+          /*
+          * 键盘事件：
+          *   onkeydown
+          *       - 按键按下
+          *       - 对于onkeydown，如果按住按键不送开，则事件一直触发
+          *       - 连续触发时，第一次和第二次之间的间隔会略长一些，其他会非常快
+          *             防止误操作发生
+          *   onkeyup
+          *       - 按键松开
+          *       -
+          *
+          * 键盘事件一般会绑定给可以获取到焦点的对象或者是document
+          * */
+  
+          document.onkeydown = function (event) {
+  
+            event = event || window.event;
+  
+            /*
+            * 可通过keyCode获取按键的编码
+            *   通过它可以判断哪个按键被按下
+            * 除了keyCode，事件对象中还提供了几个属性
+            *   altKey
+            *   ctrlKey
+            *   shiftKey
+            *       - 这三个用来判断alt ctrl 和 shift是否被按下
+            *           如果按下则返回true，否则返回false
+            * */
+  
+            //判断y是否被按下
+            if(event.keyCode == 89){
+              console.log("Y is pressed.");
+            }
+  
+          };
+  
+          document.onkeyup = function () {
+  
+            console.log("Key is released.");
+  
+          };
+  
+          var input = document.getElementsByTagName("input")[0];
+  
+          input.onkeydown = function () {
+            console.log("Key is pressed.");
+          };
+  
+        };
+  
+      </script>
+
+      <input type="text">
+      <br><br>
+      <div id="box1"></div>
+    </xmp>
   </body>
 </html>

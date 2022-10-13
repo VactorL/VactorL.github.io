@@ -3,26 +3,28 @@
   <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script>
-
-      var num = 1;
-
-      setInterval(function () {
-        console.log(num++);
-      },1500);
-
-      //延时调用，隔一段时间再执行，只执行一次
-      //延时调用和定时调用可以相互代替
-      var timer = setTimeout(function () {
-        console.log(num++);
-      },1000);
-
-      //关闭延时调用
-      clearTimeout(timer);
-
-    </script>
+    
   </head>
   <body>
+    <xmp>
+      <script>
 
+        var num = 1;
+  
+        setInterval(function () {
+          console.log(num++);
+        },1500);
+  
+        //延时调用，隔一段时间再执行，只执行一次
+        //延时调用和定时调用可以相互代替
+        var timer = setTimeout(function () {
+          console.log(num++);
+        },1000);
+  
+        //关闭延时调用
+        clearTimeout(timer);
+  
+      </script>
+    </xmp>
   </body>
 </html>
