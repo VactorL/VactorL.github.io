@@ -40,4 +40,3 @@ window.onresize = function (){
 
     frameHeight();
 
-}
