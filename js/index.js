@@ -23,15 +23,15 @@ $(() => {
 
 });
 
-function frameHeight(id) {
-        
-    let ifm = document.getElementById(id);
-    ifm.height = document.documentElement.clientHeight;
-
-}
-
-window.onresize = function (){
+/* window.onload = function () {
 
     frameHeight();
-
+    
 }
+
+function frameHeight(id) {
+    
+    let ifm = document.getElementById(id);
+    ifm.height = document.documentElement.scrollHeight;
+
+} */
