@@ -16,4 +16,28 @@ $(() => {
 
     });
 
-})
+    $('.barL-subT>li>a').click(function () {
+
+        var url = $(this).attr("class");
+        var text = $(this).text();
+        
+        $('.content').attr('src' , url);
+        $('.content-title').text(text);
+
+    });
+
+
+});
+
+function frameHeight(id) {
+        
+    let ifm = document.getElementById(id);
+    ifm.height = document.documentElement.clientHeight;
+
+}
+
+window.onresize = function (){
+
+    frameHeight();
+
+}

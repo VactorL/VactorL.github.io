@@ -45,3 +45,14 @@ a:hover{
 .barL-subT li a:hover{
     color: #C0C0C0;
 }
+
+.content-title{
+    font-size: 25px;
+    line-height: 29px;
+    color: rgb(5, 113, 61);
+    padding: 10px 0 0 270px;
+}
+
+.content{
+    display: inline-block;
+}
